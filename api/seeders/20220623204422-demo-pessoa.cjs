@@ -1,7 +1,9 @@
+'use strict';
+
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-		return queryInterface.bulkInsert('Pessoas', [
-			{
+  async up (queryInterface, Sequelize) {
+    await queryInterface.bulkInsert('Pessoas', [
+      {
 				nome: 'Ana Souza',
 				ativo: true,
 				email: 'ana@ana.com',
@@ -49,10 +51,10 @@ module.exports = {
 				createdAt: new Date(),
 				updatedAt: new Date()
 			}
-	], {})
+    ], {});
   },
 
-  down: (queryInterface, Sequelize) => {
-		return queryInterface.bulkDelete('Pessoas', null, {})
+  async down (queryInterface, Sequelize) {
+    await queryInterface.bulkDelete('People', null, {});
   }
-}
+};
