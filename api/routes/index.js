@@ -1,8 +1,8 @@
-import bodyParser from "body-parser";
+const bodyParser = require("body-parser");
 
 let app = app =>{
     app.use(bodyParser.json())
     app.get('/', (req, res) => res.send('Olá!'))
 }
 
-export default app;
+module.exports = app;
